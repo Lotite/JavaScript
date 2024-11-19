@@ -1,0 +1,12 @@
+h1{
+    text-align: center;
+}
+
+#menu{
+
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+
