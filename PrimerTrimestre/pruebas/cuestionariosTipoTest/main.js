@@ -1,169 +1,511 @@
 const json = localStorage.getItem("examenes")
-const examenes = [{
-    "titulo": "Examen de Diseño Web",
-    "preguntas": [
+const examenes = [
+    {
+      "titulo": "Desarrollo Web",
+      "preguntas": [
         {
-            "enunciado": "¿Qué elemento de una página web se utiliza para la identificación del sitio y para dotarlo de una imagen distintiva?",
-            "respuesta": "Cabecera o header",
-            "opciones": ["Cabecera o header", "Pie de página o footer", "Sistemas de navegación", "Cuerpo"]
+          "enunciado": "¿Cuál de los siguientes NO es un componente principal de una interfaz web?",
+          "respuesta": "Zona de desarrollo",
+          "opciones": [
+            "Zona de navegación",
+            "Zona de contenido e interacción",
+            "Zona de desarrollo",
+            "Cabecera"
+          ]
         },
         {
-            "enunciado": "¿En qué zona de una interfaz web se encuentran las áreas de texto, imágenes y vídeos?",
-            "respuesta": "Zona de contenido e interacción",
-            "opciones": ["Zona de contenido e interacción", "Zona de navegación", "Cabecera", "Pie de página"]
+          "enunciado": "¿Cuál es el propósito principal de la zona de navegación en una interfaz web?",
+          "respuesta": "Permitir a los usuarios acceder a todos los contenidos del sitio web",
+          "opciones": [
+            "Mostrar el contenido principal del sitio web",
+            "Permitir a los usuarios acceder a todos los contenidos del sitio web",
+            "Mostrar información de contacto y derechos de autor",
+            "Resaltar el logotipo y la marca del sitio web"
+          ]
         },
         {
-            "enunciado": "¿Qué elemento de una página web muestra el nombre de todas las páginas que componen el sitio?",
-            "respuesta": "Sistemas de navegación",
-            "opciones": ["Sistemas de navegación", "Cabecera o header", "Pie de página o footer", "Cuerpo"]
+          "enunciado": "¿Qué dos elementos son esenciales para una navegación efectiva en un sitio web, según el texto?",
+          "respuesta": "Indicación de la ubicación actual del usuario e índice de contenidos globales",
+          "opciones": [
+            "Un mapa del sitio y una barra de búsqueda",
+            "Indicación de la ubicación actual del usuario e índice de contenidos globales",
+            "Botones de redes sociales y un formulario de contacto",
+            "Animaciones y efectos visuales atractivos"
+          ]
         },
         {
-            "enunciado": "¿Dónde se suele ubicar la información sobre los créditos, la licencia y el enlace a formularios de contacto?",
-            "respuesta": "Pie de página o footer",
-            "opciones": ["Pie de página o footer", "Cabecera o header", "Sistemas de navegación", "Cuerpo"]
+          "enunciado": "¿Dónde se ubica típicamente el contenido principal de un sitio web?",
+          "respuesta": "En la zona de contenido e interacción",
+          "opciones": [
+            "En la cabecera",
+            "En el pie de página",
+            "En la zona de navegación",
+            "En la zona de contenido e interacción"
+          ]
         },
         {
-            "enunciado": "¿Cuál de estos elementos NO es un elemento conceptual en el diseño?",
-            "respuesta": "Color",
-            "opciones": ["Color", "Punto", "Línea", "Plano"]
+          "enunciado": "¿Cuál es el propósito principal de la cabecera en una página web?",
+          "respuesta": "Identificar el sitio web y darle una imagen distintiva",
+          "opciones": [
+            "Mostrar la información de contacto",
+            "Proporcionar un menú de navegación",
+            "Identificar el sitio web y darle una imagen distintiva",
+            "Mostrar el contenido principal de la página"
+          ]
         },
         {
-            "enunciado": "¿Qué son los formularios en un sitio web?",
-            "respuesta": "Documentos interactivos utilizados para recoger información",
-            "opciones": ["Documentos interactivos utilizados para recoger información", "Fuentes tipográficas", "Guías de estilo", "Lenguaje de programación"]
+          "enunciado": "¿Es obligatorio incluir una cabecera en todas las páginas de un sitio web?",
+          "respuesta": "No, pero es recomendable.",
+          "opciones": [
+            "Sí, siempre.",
+            "No, pero es recomendable.",
+            "Solo es obligatoria en la página de inicio.",
+            "Solo es obligatoria si se incluye un pie de página."
+          ]
         },
         {
-            "enunciado": "¿Qué son las fuentes seguras?",
-            "respuesta": "Fuentes tipográficas que los usuarios tenían instaladas por defecto en su dispositivo",
-            "opciones": ["Fuentes tipográficas que los usuarios tenían instaladas por defecto en su dispositivo", "Fuentes de diseño moderno", "Fuentes con licencia libre", "Fuentes descargables"]
+          "enunciado": "¿Dónde se suele ubicar el sistema de navegación en una página web?",
+          "respuesta": "Debajo de la cabecera o en la parte izquierda",
+          "opciones": [
+            "Debajo de la cabecera o en la parte izquierda",
+            "En la parte superior derecha",
+            "En el pie de página",
+            "Solo en la página de inicio"
+          ]
         },
         {
-            "enunciado": "¿Qué son las guías de estilo?",
-            "respuesta": "Documentos con directrices que permiten la normalización de estilos",
-            "opciones": ["Documentos con directrices que permiten la normalización de estilos", "Herramientas de diseño", "Lenguajes de programación", "Plantillas predefinidas"]
+          "enunciado": "¿Qué información se suele incluir en el pie de página de una página web?",
+          "respuesta": "Créditos, licencia, enlace a formularios de contacto",
+          "opciones": [
+            "El logotipo y el nombre del sitio web",
+            "El menú principal de navegación",
+            "Créditos, licencia, enlace a formularios de contacto",
+            "El contenido principal de la página"
+          ]
         },
         {
-            "enunciado": "¿Qué es HTML?",
-            "respuesta": "Lenguaje de marcado de hipertexto utilizado en las páginas web",
-            "opciones": ["Lenguaje de marcado de hipertexto utilizado en las páginas web", "Lenguaje de programación orientado a objetos", "Sistema de gestión de bases de datos", "Protocolo de comunicación"]
+          "enunciado": "¿Qué es el \"cuerpo\" de una página web?",
+          "respuesta": "La parte central donde se muestra la información principal",
+          "opciones": [
+            "La cabecera de la página",
+            "La parte central donde se muestra la información principal",
+            "El pie de página",
+            "La zona de navegación"
+          ]
         },
         {
-            "enunciado": "¿Qué es HTML5?",
-            "respuesta": "Última versión del lenguaje para la programación de páginas web HTML",
-            "opciones": ["Última versión del lenguaje para la programación de páginas web HTML", "Herramienta de diseño gráfico", "Software de edición de vídeo", "Gestor de contenidos"]
+          "enunciado": "¿Qué se recomienda en cuanto al diseño de los elementos del \"cuerpo\" de una página web?",
+          "respuesta": "Que todos los elementos tengan un diseño uniforme y similar entre las páginas",
+          "opciones": [
+            "Que cada página tenga un diseño único y diferente",
+            "Que todos los elementos tengan un diseño uniforme y similar entre las páginas",
+            "Que se utilicen colores brillantes y llamativos en cada elemento",
+            "Que se evite el uso de imágenes y elementos multimedia"
+          ]
         },
         {
-            "enunciado": "¿Qué es la legibilidad en tipografía?",
-            "respuesta": "Facilidad de lectura de una letra",
-            "opciones": ["Facilidad de lectura de una letra", "Tamaño de la fuente", "Estilo de la fuente", "Color de la fuente"]
+          "enunciado": "¿Qué son los elementos conceptuales en el diseño web?",
+          "respuesta": "Elementos que no son visibles, como el punto, la línea, el plano y el volumen",
+          "opciones": [
+            "Elementos visuales como imágenes y colores",
+            "Elementos que no son visibles, como el punto, la línea, el plano y el volumen",
+            "Elementos interactivos, como botones y formularios",
+            "Elementos de navegación, como menús y enlaces"
+          ]
         },
         {
-            "enunciado": "¿Qué son los marcos en diseño web?",
-            "respuesta": "Ventanas independientes incorporadas dentro de la página general",
-            "opciones": ["Ventanas independientes incorporadas dentro de la página general", "Elementos de diseño gráfico", "Herramientas de navegación", "Estilos de formato"]
+          "enunciado": "¿Cuál de los siguientes NO es un elemento conceptual en el diseño web?",
+          "respuesta": "Color",
+          "opciones": [
+            "Punto",
+            "Línea",
+            "Color",
+            "Plano"
+          ]
         },
         {
-            "enunciado": "¿Qué es la tipografía?",
-            "respuesta": "Tipo de letra que se escoge para un determinado diseño",
-            "opciones": ["Tipo de letra que se escoge para un determinado diseño", "Tamaño de la letra", "Color de la letra", "Espacio entre letras"]
+          "enunciado": "¿Qué son los formularios en un sitio web?",
+          "respuesta": "Documentos interactivos para recoger información del usuario",
+          "opciones": [
+            "Elementos visuales para mejorar el diseño",
+            "Documentos interactivos para recoger información del usuario",
+            "Scripts que añaden funciones avanzadas a la página",
+            "Animaciones para hacer la página más atractiva"
+          ]
         },
         {
-            "enunciado": "¿Cuál es una característica principal del lenguaje HTML?",
-            "respuesta": "Sencillez",
-            "opciones": ["Sencillez", "Complejidad", "Obscurecimiento", "Dificultad"]
+          "enunciado": "¿Qué son las \"fuentes seguras\" en el diseño web?",
+          "respuesta": "Fuentes tipográficas que los usuarios tenían instaladas por defecto en su dispositivo",
+          "opciones": [
+            "Fuentes descargadas de sitios web confiables",
+            "Fuentes que evitan problemas de seguridad en la página",
+            "Fuentes tipográficas que los usuarios tenían instaladas por defecto en su dispositivo",
+            "Fuentes que usan cifrado para proteger la información"
+          ]
         },
         {
-            "enunciado": "¿Qué significa que HTML no se compila?",
-            "respuesta": "Se interpreta por el propio navegador",
-            "opciones": ["Se interpreta por el propio navegador", "Se traduce a lenguaje máquina", "Se ejecuta en un servidor", "Se almacena en una base de datos"]
+          "enunciado": "¿Cuál es el propósito de las \"guías de estilo\" en el desarrollo web?",
+          "respuesta": "Normalizar los estilos y ofrecer una apariencia uniforme al sitio web",
+          "opciones": [
+            "Proporcionar instrucciones para la creación de animaciones",
+            "Definir la estructura de la base de datos del sitio web",
+            "Normalizar los estilos y ofrecer una apariencia uniforme al sitio web",
+            "Enseñar a los usuarios cómo navegar por el sitio web"
+          ]
         },
         {
-            "enunciado": "¿Cómo se llaman las instrucciones en HTML?",
-            "respuesta": "Etiquetas",
-            "opciones": ["Etiquetas", "Comandos", "Funciones", "Procedimientos"]
+          "enunciado": "¿Qué significa HTML?",
+          "respuesta": "HyperText Markup Language",
+          "opciones": [
+            "HyperText Markup Language",
+            "High Technology Modern Language",
+            "Home Tool for Managing Links",
+            "Hyperlink and Text Management Language"
+          ]
         },
         {
-            "enunciado": "¿Qué permite HTML?",
-            "respuesta": "Escribir hipertexto",
-            "opciones": ["Escribir hipertexto", "Crear animaciones", "Diseñar gráficos 3D", "Gestionar bases de datos"]
+          "enunciado": "¿Cuál es la principal diferencia entre HTML y HTML5?",
+          "respuesta": "HTML5 es la última versión del lenguaje HTML e incorpora nuevas etiquetas y funcionalidades",
+          "opciones": [
+            "HTML5 es más antiguo y ya no se utiliza",
+            "HTML5 es la última versión del lenguaje HTML e incorpora nuevas etiquetas y funcionalidades",
+            "HTML5 solo se utiliza para crear sitios web móviles",
+            "HTML5 no permite el uso de elementos multimedia"
+          ]
         },
         {
-            "enunciado": "¿Qué son los elementos semánticos en HTML5?",
-            "respuesta": "Generan divisiones en el documento y describen al navegador su propósito",
-            "opciones": ["Generan divisiones en el documento y describen al navegador su propósito", "Estilos visuales para el contenido", "Scripts para la interacción del usuario", "Animaciones y efectos especiales"]
+          "enunciado": "¿Cuál de las siguientes NO es una característica principal de HTML?",
+          "respuesta": "Se compila antes de ejecutarse",
+          "opciones": [
+            "Sencillez",
+            "No hay variables",
+            "Se compila antes de ejecutarse",
+            "Se interpreta por el propio navegador"
+          ]
         },
         {
-            "enunciado": "¿Para qué se utiliza la etiqueta <article>?",
-            "respuesta": "Describir las unidades de contenido",
-            "opciones": ["Describir las unidades de contenido", "Crear un menú de navegación", "Definir la barra lateral", "Mostrar el pie de página"]
+          "enunciado": "¿Cómo se llaman las instrucciones en HTML?",
+          "respuesta": "Etiquetas",
+          "opciones": [
+            "Comandos",
+            "Funciones",
+            "Etiquetas",
+            "Variables"
+          ]
         },
         {
-            "enunciado": "¿Qué define la etiqueta <aside>?",
-            "respuesta": "Barra lateral de una página web",
-            "opciones": ["Barra lateral de una página web", "Contenido principal del documento", "Cabecera del sitio web", "Pie de página del sitio web"]
+          "enunciado": "¿Qué es el hipertexto en el contexto de HTML?",
+          "respuesta": "Texto que incluye enlaces a otros documentos o recursos",
+          "opciones": [
+            "Texto con formato especial, como negrita o cursiva",
+            "Texto que incluye enlaces a otros documentos o recursos",
+            "Texto escrito en un lenguaje de programación",
+            "Texto que se muestra en una ventana emergente"
+          ]
         },
         {
-            "enunciado": "¿Qué representa la etiqueta <footer>?",
-            "respuesta": "Pie de página",
-            "opciones": ["Pie de página", "Cabecera del sitio", "Menú de navegación", "Contenido principal"]
+          "enunciado": "¿Qué son los elementos semánticos en HTML5?",
+          "respuesta": "Etiquetas que describen al navegador el propósito del contenido",
+          "opciones": [
+            "Etiquetas que definen la apariencia visual de la página",
+            "Etiquetas que describen al navegador el propósito del contenido",
+            "Etiquetas que añaden animaciones y efectos especiales",
+            "Etiquetas que permiten la interacción con bases de datos"
+          ]
         },
         {
-            "enunciado": "¿Qué define la etiqueta <header>?",
-            "respuesta": "Parte superior de la página web",
-            "opciones": ["Parte superior de la página web", "Pie de página del sitio", "Barra lateral de la página", "Cuerpo del documento"]
+          "enunciado": "¿Para qué se utiliza la etiqueta <article> en HTML5?",
+          "respuesta": "Para describir las unidades de contenido de una página",
+          "opciones": [
+            "Para definir la barra lateral de una página web",
+            "Para describir las unidades de contenido de una página",
+            "Para crear el pie de página de un sitio web",
+            "Para definir el menú principal de navegación"
+          ]
         },
         {
-            "enunciado": "¿Qué representa la etiqueta <main>?",
-            "respuesta": "Contenido principal del 'body' de un documento",
-            "opciones": ["Contenido principal del 'body' de un documento", "Cabecera del sitio web", "Pie de página del sitio web", "Barra lateral de la página"]
+          "enunciado": "¿Qué tipo de contenido suele incluirse en la etiqueta <aside>?",
+          "respuesta": "Elementos que enlazan a otros sitios web o redes sociales",
+          "opciones": [
+            "El contenido principal de la página",
+            "Elementos que enlazan a otros sitios web o redes sociales",
+            "Información de contacto y derechos de autor",
+            "El menú principal de navegación"
+          ]
         },
         {
-            "enunciado": "¿Qué crea la etiqueta <nav>?",
-            "respuesta": "Menú de navegación",
-            "opciones": ["Menú de navegación", "Cabecera del sitio", "Pie de página del sitio", "Contenido principal"]
+          "enunciado": "¿Qué etiqueta se utiliza para crear el pie de página de un sitio web?",
+          "respuesta": "<footer>",
+          "opciones": [
+            "<footer>",
+            "<header>",
+            "<section>",
+            "<nav>"
+          ]
         },
         {
-            "enunciado": "¿Para qué se utiliza la etiqueta <section>?",
-            "respuesta": "Crear diferentes secciones dentro de una misma página web",
-            "opciones": ["Crear diferentes secciones dentro de una misma página web", "Definir la estructura del documento", "Insertar imágenes y vídeos", "Crear formularios interactivos"]
+          "enunciado": "¿Qué etiqueta representa el contenido principal del cuerpo de un documento HTML5?",
+          "respuesta": "<main>",
+          "opciones": [
+            "<main>",
+            "<article>",
+            "<section>",
+            "<div>"
+          ]
         },
         {
-            "enunciado": "¿Qué representa la etiqueta <time>?",
-            "respuesta": "Hora y fecha en una página web",
-            "opciones": ["Hora y fecha en una página web", "Duración de un evento", "Periodo de validez", "Fecha límite"]
+          "enunciado": "¿Para qué se utiliza la etiqueta <nav>?",
+          "respuesta": "Para crear un menú de navegación",
+          "opciones": [
+            "Para crear un menú de navegación",
+            "Para definir una sección de contenido",
+            "Para insertar una imagen",
+            "Para crear un formulario"
+          ]
         },
         {
-            "enunciado": "¿Qué función tiene la etiqueta <email> en los formularios de HTML5?",
-            "respuesta": "Crea un campo para introducir el correo electrónico y realiza una validación automática",
-            "opciones": ["Crea un campo para introducir el correo electrónico y realiza una validación automática", "Envía un correo electrónico al servidor", "Valida la dirección IP del usuario", "Cifra la información del formulario"]
+          "enunciado": "¿Qué etiqueta se utiliza para crear diferentes secciones dentro de una misma página web?",
+          "respuesta": "<section>",
+          "opciones": [
+            "<section>",
+            "<article>",
+            "<header>",
+            "<footer>"
+          ]
         },
         {
-            "enunciado": "¿Para qué se utiliza la etiqueta <mark>?",
-            "respuesta": "Representar un texto resaltado o subrayado",
-            "opciones": ["Representar un texto resaltado o subrayado", "Cambiar el color del texto", "Aumentar el tamaño del texto", "Insertar un enlace en el texto"]
+          "enunciado": "¿Qué etiqueta se utiliza para representar la hora y la fecha en una página web?",
+          "respuesta": "<time>",
+          "opciones": [
+            "<date>",
+            "<time>",
+            "<calendar>",
+            "<clock>"
+          ]
         },
         {
-            "enunciado": "¿Qué representa la etiqueta <figure>?",
-            "respuesta": "Contenido de carácter visual como imágenes, ilustraciones, diagramas, etc.",
-            "opciones": ["Contenido de carácter visual como imágenes, ilustraciones, diagramas, etc.", "Texto con formato especial", "Código fuente de un programa", "Datos numéricos y estadísticos"]
+          "enunciado": "¿Qué nueva etiqueta en HTML5 facilita la introducción y validación del correo electrónico en formularios?",
+          "respuesta": "<input type=\"email\">",
+          "opciones": [
+            "<email>",
+            "<input type=\"email\">",
+            "<mail>",
+            "<address>"
+          ]
         },
         {
-            "enunciado": "¿Qué función tiene la etiqueta <figcaption>?",
-            "respuesta": "Añade un título a una figura",
-            "opciones": ["Añade un título a una figura", "Inserta una imagen en la página", "Crea un enlace a un archivo multimedia", "Define el tamaño de la figura"]
+          "enunciado": "¿Para qué se utiliza la etiqueta <mark>?",
+          "respuesta": "Para resaltar un texto subrayándolo",
+          "opciones": [
+            "Para crear una lista numerada",
+            "Para insertar un salto de línea",
+            "Para resaltar un texto subrayándolo",
+            "Para crear un enlace a otro documento"
+          ]
         },
         {
-            "enunciado": "¿Cuál es la finalidad de la etiqueta <details>?",
-            "respuesta": "Mostrar información adicional de algún elemento de la página web",
-            "opciones": ["Mostrar información adicional de algún elemento de la página web", "Ocultar contenido irrelevante", "Mejorar la estética del sitio", "Reducir el tiempo de carga"]
+          "enunciado": "¿Qué etiqueta representa contenido visual como imágenes, ilustraciones y diagramas?",
+          "respuesta": "<figure>",
+          "opciones": [
+            "<img>",
+            "<picture>",
+            "<figure>",
+            "<visual>"
+          ]
         },
         {
-            "enunciado": "¿Qué incorpora la etiqueta <summary>?",
-            "respuesta": "Un sumario de la etiqueta <details>",
-            "opciones": ["Un sumario de la etiqueta <details>", "Una descripción detallada del contenido", "Un enlace a una fuente externa", "Una lista de opciones"]
+          "enunciado": "¿Qué etiqueta se utiliza para añadir un título a una figura?",
+          "respuesta": "<figcaption>",
+          "opciones": [
+            "<figcaption>",
+            "<figuretitle>",
+            "<imgtitle>",
+            "<title>"
+          ]
+        },
+        {
+          "enunciado": "¿Qué etiqueta permite mostrar información adicional de un elemento de la página web, similar a un menú acordeón?",
+          "respuesta": "<details>",
+          "opciones": [
+            "<details>",
+            "<summary>",
+            "<accordion>",
+            "<extra>"
+          ]
+        },
+        {
+          "enunciado": "¿Qué etiqueta añade un sumario a la información mostrada con la etiqueta <details>?",
+          "respuesta": "<summary>",
+          "opciones": [
+            "<summary>",
+            "<detailsummary>",
+            "<description>",
+            "<info>"
+          ]
+        },
+        {
+          "enunciado": "¿Cuál es la importancia de la legibilidad en una familia tipográfica?",
+          "respuesta": "Que sea fácil de leer y comprender",
+          "opciones": [
+            "Que sea visualmente atractiva y moderna",
+            "Que sea fácil de leer y comprender",
+            "Que sea compatible con todos los navegadores",
+            "Que tenga una gran variedad de estilos y pesos"
+          ]
+        },
+        {
+          "enunciado": "¿Qué son los marcos (\"frames\") en el diseño web?",
+          "respuesta": "Ventanas independientes dentro de la página general (obsoleto en HTML5)",
+          "opciones": [
+            "Bordes decorativos alrededor de las imágenes",
+            "Ventanas independientes dentro de la página general (obsoleto en HTML5)",
+            "Estructuras que dividen la página en columnas",
+            "Animaciones que crean un efecto de movimiento"
+          ]
+        },
+        {
+          "enunciado": "¿Qué significa \"tipografía\" en el contexto del diseño web?",
+          "respuesta": "El tipo de letra que se escoge para un diseño",
+          "opciones": [
+            "El tamaño de la fuente del texto",
+            "El color del texto",
+            "El tipo de letra que se escoge para un diseño",
+            "La alineación del texto (izquierda, derecha, centrado)"
+          ]
+        },
+        {
+          "enunciado": "¿Cuál de las siguientes opciones describe mejor la relación entre <div> y <section> en HTML5?",
+          "respuesta": "<section> se utiliza para crear secciones con un propósito específico, mientras que <div> es una división genérica",
+          "opciones": [
+            "<section> ha reemplazado por completo a <div>, que ya no se utiliza",
+            "<section> se utiliza para crear secciones con un propósito específico, mientras que <div> es una división genérica",
+            "<div> solo se utiliza para crear la estructura básica de la página, mientras que <section> se utiliza para el contenido",
+            "<div> y <section> son etiquetas intercambiables que se pueden usar indistintamente"
+          ]
+        },
+        {
+          "enunciado": "¿Cuál es la ventaja de utilizar elementos semánticos en HTML5?",
+          "respuesta": "Facilitan la comprensión del código por parte de los desarrolladores y los motores de búsqueda",
+          "opciones": [
+            "Mejoran la velocidad de carga de la página",
+            "Facilitan la comprensión del código por parte de los desarrolladores y los motores de búsqueda",
+            "Permiten crear diseños más complejos y visualmente atractivos",
+            "Reducen el tamaño del archivo HTML"
+          ]
+        },
+        {
+          "enunciado": "¿Qué etiqueta NO es un elemento semántico en HTML5?",
+          "respuesta": "<div>",
+          "opciones": [
+            "<article>",
+            "<nav>",
+            "<div>",
+            "<footer>"
+          ]
+        },
+        {
+          "enunciado": "Si deseas crear una página web con una barra lateral para mostrar enlaces a redes sociales, ¿qué etiqueta HTML5 utilizarías?",
+          "respuesta": "<aside>",
+          "opciones": [
+            "<article>",
+            "<aside>",
+            "<nav>",
+            "<footer>"
+          ]
+        },
+        {
+          "enunciado": "Quieres destacar una frase importante en un párrafo de texto. ¿Qué etiqueta HTML5 utilizarías?",
+          "respuesta": "<mark>",
+          "opciones": [
+            "<strong>",
+            "<mark>",
+            "<important>",
+            "<b>"
+          ]
+        },
+        {
+          "enunciado": "Estás creando una página web con un artículo que incluye una imagen con una leyenda. ¿Qué etiquetas HTML5 utilizarías para estructurar este contenido?",
+          "respuesta": "<article>, <figure>, <figcaption>",
+          "opciones": [
+            "<article>, <img>, <figcaption>",
+            "<section>, <figure>, <img>",
+            "<article>, <figure>, <figcaption>",
+            "<div>, <img>, <p>"
+          ]
+        },
+        {
+          "enunciado": "Necesitas agregar un formulario de contacto en el pie de página de tu sitio web. ¿Qué etiqueta HTML5 te permite hacerlo?",
+          "respuesta": "<form>",
+          "opciones": [
+            "<footer>",
+            "<contact>",
+            "<form>",
+            "<section>"
+          ]
+        },
+        {
+          "enunciado": "Quieres crear un menú de navegación con enlaces a las diferentes secciones de tu sitio web. ¿Qué etiqueta HTML5 es la más adecuada?",
+          "respuesta": "<nav>",
+          "opciones": [
+            "<nav>",
+            "<menu>",
+            "<ul>",
+            "<links>"
+          ]
+        },
+        {
+          "enunciado": "¿Cómo se crea un enlace a una página web externa en HTML?",
+          "respuesta": "<a href=\"URL\">Texto del enlace</a>",
+          "opciones": [
+            "<a href=\"URL\">Texto del enlace</a>",
+            "<link href=\"URL\">",
+            "<href=\"URL\">Texto del enlace</href>",
+            "<url=\"URL\">Texto del enlace</url>"
+          ]
+        },
+        {
+          "enunciado": "¿Qué atributo se utiliza para especificar la URL de una imagen en HTML?",
+          "respuesta": "src",
+          "opciones": [
+            "src",
+            "href",
+            "alt",
+            "url"
+          ]
+        },
+        {
+          "enunciado": "¿Qué atributo se utiliza para proporcionar una descripción alternativa de una imagen en HTML?",
+          "respuesta": "alt",
+          "opciones": [
+            "alt",
+            "title",
+            "desc",
+            "text"
+          ]
+        },
+        {
+          "enunciado": "¿Qué etiqueta HTML5 se utiliza para insertar un salto de línea?",
+          "respuesta": "<br>",
+          "opciones": [
+            "<br>",
+            "<newline>",
+            "<p>",
+            "<linebreak>"
+          ]
+        },
+        {
+          "enunciado": "¿Qué etiqueta HTML5 se utiliza para crear un encabezado de nivel 1?",
+          "respuesta": "<h1>",
+          "opciones": [
+            "<h1>",
+            "<header>",
+            "<head>",
+            "<h2>"
+          ]
         }
-    ]
-}];
+      ]
+    }
+  ];
 const preguntas = []
 let posicion = 0;
 let maxPos = 0
