@@ -1,8 +1,9 @@
 h1{
     text-align: center;
 }
-.btn-eliminar{
+.btn-examen{
     margin-left: 40px;
+    float: left;
 }
 .btn-menu{
     width: 120px;
@@ -26,11 +27,48 @@ h1{
     }
 }
 
+#mas{
+    width: 200px;
+    background-color: red;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 20px;
+
+    & p{
+        margin: 3px;
+    }
+    & p:hover{
+        color: rgb(38, 2, 122);
+        cursor: pointer;
+    }
+}
+
+#context-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 200px;
+}
+.context-menu-item {
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+.context-menu-item:hover {
+    background-color: #e6f3ff;
+    color: #0066cc;
+}
+
 .examen , .opcion{
     margin-block:10px;
     display: flex;
     align-self: center;
-    width: max-content;
+    width: 100%;
     & p {
         width: 90%;
         height: 40px;
