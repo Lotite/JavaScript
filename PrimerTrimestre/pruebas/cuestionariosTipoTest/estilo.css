@@ -1,12 +1,66 @@
 h1{
     text-align: center;
 }
+.btn-eliminar{
+    margin-left: 40px;
+}
+.btn-menu{
+    width: 120px;
+}
 
-#menu{
+#examenes,#opciones{
+    min-height: 200px;
+    padding-block: 10px;
+    margin-block:10px;
+    border: 1px  solid rgb(37, 171, 255) ;
+    border-left: none;
+    border-right: none;
+
+
+}
+
+
+
+.examen , .opcion{
+    margin-block:10px;
+    display: flex;
+    align-self: center;
+    width: max-content;
+    & p {
+        width: 90%;
+        height: 40px;
+        margin-inline: 6px;
+    }
+    & button{
+        transform: translateY(-6px);
+        height: 40px;
+    }
+    & p:hover{
+       color: rgb(38, 2, 122);
+       cursor: pointer;
+    }
+}
+
+.opcion{
+    margin-inline:30px;
+}
+
+#menu {
 
     width: 400px;
     display: flex;
     flex-direction: column;
 }
 
+#preguntas{
+
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+#preguntas{
+    display: none;
+}
 
