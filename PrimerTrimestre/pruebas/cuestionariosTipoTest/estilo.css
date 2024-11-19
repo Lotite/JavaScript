@@ -19,7 +19,12 @@ h1{
 
 }
 
-
+.alert{
+    max-width:400px;
+    & strong{
+        height: 15px;
+    }
+}
 
 .examen , .opcion{
     margin-block:10px;
