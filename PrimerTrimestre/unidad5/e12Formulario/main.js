@@ -48,7 +48,7 @@ function inicializarEventos() {
         const hora = document.querySelector("#hora");
         enviar = validarPatron(/([0-1][0-9]|2[0-3]):[0-5][0-9]/, hora.value, hora, "Error en el campo Hora") && enviar
 
-        if (!enviar || confirm("Quieres enviar los datos?")) {
+        if (!enviar || !confirm("Quieres enviar los datos?")) {
             e.preventDefault();
         }
 

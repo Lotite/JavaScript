@@ -107,3 +107,11 @@ h1{
     display: none;
 }
 
+.container{
+    min-width: 800px;
+}
+
+#crearExamen{
+    width: 500px ;
+    max-width: none;
+}
