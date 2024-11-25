@@ -193,17 +193,23 @@ function agregarElemento(tipo,num) {
             divTemporal = document.createElement("div")
             divTemporal.classList.add("crearPregunta")
             const temNum = document.querySelectorAll(".crearPregunta").length;
-            divTemporal.innerHTML = `<p class="enunciado">enunciado: <br> <input type="text"></p><div class="crearOpciones"><span>Opcion</span>: <br/> <input type="radio"  name="pregunta${temNum}" checked><input type="text"></div><button>Agregar Opcion</button>`
+            divTemporal.innerHTML = `<p class="enunciado">enunciado: <br> <input type="text"></p><div class="crearOpciones"><div class="opcion"><span>Opcion</span>: <br/> <input type="radio"  name="pregunta${temNum}" checked><input type="text"><button class="bEliminarOpcion">Eliminar</button></div></div>`
+            divTemporal.innerHTML += `<button class="bOpcion">Agregar Opcion</button><button class="bEliminarPregunta">Eliminar pregunta</button>`
             contenedor.appendChild(divTemporal)
-            contenedor.querySelector(".crearPregunta:last-child button").addEventListener("click",()=>agregarElemento("opcion",temNum))
+            contenedor.querySelector(".crearPregunta:last-child .bOpcion").addEventListener("click",()=>agregarElemento("opcion",temNum))
+            contenedor.querySelector(".crearPregunta:last-child .bEliminarPregunta").addEventListener("click",()=>eliminarPregunta(temNum))
             break;
         case "opcion":
-            contenedor.querySelectorAll(".crearOpciones")[num].innerHTML = `<span>Opcion</span>: <br/> <input type="radio" name="pregunta${num}"><input type="text">`
+            contenedor.querySelectorAll(".crearOpciones")[num].innerHTML += `<div class="opcion"><span>Opcion</span>: <br/> <input type="radio" name="pregunta${num}"><input type="text"></div>`
             break;
         default:
             console.ernror("No se permite " + tipo);
             alert("Error")
     }
+}
+
+function eliminarPregunta(num){
+    document.querySelectorAll(".crearPregunta")[num].remove()
 }
 
 function guardarExamen(){
