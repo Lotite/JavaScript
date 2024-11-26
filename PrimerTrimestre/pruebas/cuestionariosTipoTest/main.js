@@ -187,7 +187,13 @@ function imprimirOpciones(opciones) {
         span.textContent = opcion
         const check = div.querySelector("input")
         check.addEventListener("click", () => {
-            respuestas[posicion] = {posicion:posicion,respuesta:opcion}
+            //respuestas[posicion] = {posicion:posicion,respuesta:opcion}
+            if(respuestas[posicion]){
+                check.checked = false;
+                respuestas.splice(posicion,1)
+            }else{
+                respuestas.push({posicion:posicion,respuesta:opcion})
+            }
         })
         padre.appendChild(div)
     });
