@@ -1,9 +1,11 @@
 let lista = JSON.parse(localStorage.getItem("lista")) || [];
+// {texto:"", checked:true}
+//<li><input type="checkbox"><span>asd</span><button>Eliminar</button></li>
 if (lista.length) {
     lista.forEach((tarea , index)=> {
         const li = document.createElement("li");
-        li.innerHTML = tarea;
-        añadirEventos(li,index);
+        li.innerHTML = tarea.txt;
+        añadirEventos(li,index,tarea.checked);
         document.querySelector("#listaTarea").appendChild(li);
     });
 }
@@ -21,21 +23,23 @@ document.querySelector("#addTarea").addEventListener("click", () => {
         const eliminar = document.createElement("button");
         eliminar.textContent = "Eliminar";
         li.appendChild(eliminar);
-        añadirEventos(li);
+        añadirEventos(li,lista.length);
         document.querySelector("#listaTarea").appendChild(li);
-        lista.push(li.innerHTML);
+        lista.push({txt:li.innerHTML,checked : false});
         localStorage.setItem("lista", JSON.stringify(lista));
     }else{
         alert("No se pudo agregar la tarea")
     }
 });
 
-function añadirEventos(elementoPadre,index) {
+function añadirEventos(elementoPadre,index,checked = false) {
     const button = elementoPadre.querySelector("button");
     const checkbox = elementoPadre.querySelector("input[type='checkbox']")
+    checkbox.checked = checked;
     checkbox.addEventListener("click",()=>{
-          elementoPadre.querySelector("span").style.textDecoration = checkbox.checked ? "line-through" : "none"
-          elementoPadre.querySelector("span").style.color = checkbox.checked ? "red" : "black"
+        lista[index].checked = checkbox.checked
+        marcar(elementoPadre,checkbox.checked)
+        localStorage.setItem("lista", JSON.stringify(lista));
     })
     if (button) {
         button.addEventListener("click", () => {
@@ -43,5 +47,11 @@ function añadirEventos(elementoPadre,index) {
             lista.splice(index,1)
             localStorage.setItem("lista", JSON.stringify(lista));
         });
+        marcar(elementoPadre,checked)
     }
+}
+
+function marcar(elementoPadre,checked){
+    elementoPadre.querySelector("span").style.textDecoration = checked ? "line-through" : "none"
+    elementoPadre.querySelector("span").style.color = checked ? "red" : "black"
 }

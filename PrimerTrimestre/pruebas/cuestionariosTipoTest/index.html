@@ -14,26 +14,15 @@
 
 <body>
     <main>
-        <div
-            class="alert  mt-5 text-center mx-auto "
-            role="alert"
-        >
-            <strong></strong>
-        </div>
-        
-        <div id="menu" class=" container p-3 bg-info bg-opacity-10 border border-info border rounded mt-5">
+        <div id="menu" class=" mx-auto p-3 bg-info  bg-opacity-10 border border-info border rounded mt-5">
             <h1>Seleciona Tu Examen</h1>
-            <div id="examenes">
-                <!-- <div class="examen"><p>Segundo Examen de Diseño web</p><button class="btn btn-eliminar btn-outline-dark btn-light">Eliminar</button></div>
-                <div class="examen"><p>Segundo Examen de Diseño web</p><button class="btn btn-eliminar btn-outline-dark btn-light">Eliminar</button></div>
-                <div class="examen"><p>Segundo Examen de Diseño web</p><button class="btn btn-eliminar btn-outline-dark btn-light">Eliminar</button></div> -->
-            </div>
-            <div class="mx-auto">
-                <button id="addPregunta" class="mx-2 btn btn-menu btn-dark">Importar</button>
-                <button id="makePregunta" class="mx-2 btn btn-menu btn-dark">Crear</button>
+            <div id="examenes"></div>
+            <div class="button-group mx-auto">
+                <button id="addPregunta" class="mx-2 btn-half-width  btn btn-menu btn-dark">Importar</button>
+                <button id="makePregunta" class="mx-2 btn-half-width btn btn-menu btn-dark">Crear</button>
             </div>
         </div>
-        <div id="preguntas" class=" container p-3 bg-info bg-opacity-10 border border-info border rounded mt-5">
+        <div id="preguntas" class="container p-3 bg-info bg-opacity-10 border border-info border rounded mt-5">
             <h3>Pregunta</h3>
             <div id="opciones">
                 <div class="opcion"><label><input type="radio" name="pregunta1"><span>Respuesta1</span></label></div>
@@ -47,25 +36,27 @@
                     <label><input type="radio" name="pregunta1"> <span>Respuesta1</span></label>
                 </div>
             </div>
-            <div class="mx-auto">
-                <button id="anterior" class="mx-2 btn btn-menu btn-dark">Anterior</button>
-                <button id="siguiente" class="mx-2 btn btn-menu btn-dark">Siguiente</button>
+            <div class="mx-auto button-group">
+                <button id="cancelarHacerExamen" class="btn btn-half-width btn-danger gb-gradient">Cancelar</button>
+                <button id="anterior" class="btn-half-width mx-2 btn btn-menu btn-dark">Anterior</button>
+                <button id="siguiente" class="btn-half-width mx-2 btn btn-menu btn-dark">Siguiente</button>
             </div>
         </div>
         <div id="context-menu">
             <div id="abrir" class="context-menu-item">Abrir</div>
-            <div class="context-menu-item">Editar</div>
+            <div id="editar" class="context-menu-item">Editar</div>
             <div id="imprimir" class="context-menu-item">Imprimir</div>
             <div id="codificar" class="context-menu-item">Exportar</div>
             <div id="eliminar" class="context-menu-item">Eliminar</div>
         </div>
-        <div id="crearExamen" class="mx-auto mt-5">
+        <div id="crearExamen" class="mx-auto mt-5 p-3 bg-info bg-opacity-10 border border-info border rounded">
             <div id="contenedor">
 
             </div>
-            <div class="buttonsGrup">
-                <button id="addCrearPregunta">Añadir Pregunta</button>
-                <button id="bCrearExamen">Crear el examen</button>
+            <div class="button-group mx-auto">
+                <button id="cancelarCrearExamen" class="btn btn-danger gb-gradient">Cancelar</button>
+                <button id="addCrearPregunta" class="btn btn-success bg-gradient">Añadir Pregunta</button>
+                <button id="bCrearExamen" class="btn btn-dark">Crear el examen</button>
             </div>
         </div>
         <div id="imprimirPDF" class="container"></div>
