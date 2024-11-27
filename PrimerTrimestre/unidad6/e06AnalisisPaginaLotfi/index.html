@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analizador de Página Web</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Analizador de Página Web</h1>
+        <div id="contenidoEjemplo">
+            <p>Este es el primer párrafo de ejemplo. Contiene <a href="https://www.youtube.com/">un enlace</a> y <a href="https://es.wikipedia.org/wiki/Municipio">otro enlace</a>.</p>
+            <p>Este es el segundo párrafo de ejemplo. También tiene <a href="https://www.youtube.com/">un enlace</a>.</p>
+            <p>Este es el tercer párrafo. Contiene <a href="https://es.wikipedia.org/wiki/Municipio">un enlace a Municipio</a> y <a href="https://www.youtube.com/">otro enlace más</a>.</p>
+        </div>
+        <button id="analizarPagina">Analizar esta página</button>
+        <div id="resultadoAnalisis"></div>
+        <hr>
+        <h2>Cargar y analizar otra página</h2>
+        <input type="file" id="fileInput" accept=".html">
+        <iframe id="paginaCargada" style="display:none;"></iframe>
+        <button id="analizarCargada" disabled>Analizar página cargada</button>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
