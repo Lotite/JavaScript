@@ -17,7 +17,7 @@ document.querySelector("#fileInput").addEventListener("change",(e)=>{
         document.querySelector("#analizarCargada").removeAttribute("disabled")
         document.querySelector("#paginaCargada").src = URL.createObjectURL(archivo)
         document.querySelector("#paginaCargada").style.display = "block"
-        document.querySelector("#analizarCargada").addEventListener("click", ()=>analazarWeb(document.querySelector("#paginaCargada").contentWindow.document))
+        document.querySelector("#analizarCargada").addEventListener("click", ()=>analazarWeb(document.querySelector("#paginaCargada").contentWindow.documentzzz))
     }
 })
 

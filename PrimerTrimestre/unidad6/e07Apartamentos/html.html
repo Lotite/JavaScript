@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="edificiosTarea.js" type="module"></script>
+    <title>Edificios</title>
+    <style>
+        form {
+            margin-block: 40px;
+        }
+
+        .formGrup > *{
+            width: 100px;
+            margin-inline: 10px;
+            padding: 0px;
+
+        }
+        
+
+        table {
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        th,
+        td {
+            padding: 8px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <form id="formMain">
+        <div class="formGrup">
+            <input id="inputCalle" type="text" placeholder="Calle">
+            <input id="inputNumero" type="text" placeholder="Número">
+            <input id="inputCP" type="text" placeholder="CP">
+        </div>
+        <div class="formGrup">
+            <input id="inputPLantas" type="text" placeholder="Plantas">
+            <input id="inputPuertas" type="text" placeholder="Puertas">
+            <Button type="button">Añadir</Button>
+        </div>
+    </form>
+
+    <div id="contenedor">
+        
+    </div>
+
+</body>
+
+</html>
