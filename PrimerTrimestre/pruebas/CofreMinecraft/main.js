@@ -10,7 +10,7 @@ document.addEventListener("mouseup", () => {
     if(objSelect){
         objSelect.style.display = "none"
         objSelect.classList.remove("selected")
-        mover()
+        setTimeout(mover,100)
     }
 })
 
@@ -58,6 +58,5 @@ function detectarColision(obj){
     document.querySelectorAll(".ranura").forEach(ranura=>{
         const { left: rLeft, top: rTop, right: rRight, bottom: rBottom } = ranura.getBoundingClientRect();
         const { left: oLeft, top: oTop, right: oRight, bottom: oBottom } = obj.getBoundingClientRect();
-        if()
     })
 }
