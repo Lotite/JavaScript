@@ -93,6 +93,9 @@ document.querySelector("#siguiente").addEventListener("click", () => { cambiarPr
 document.querySelector("#anterior").addEventListener("click", () => { cambiarPregunta(-1) })
 
 
+document.querySelector("#borrarPreguntasInfo").addEventListener("click", () => {
+    corregirPreguntas(true)}
+)
 //////Funciones
 
 function cargarExamen(examen) {
@@ -145,13 +148,34 @@ function imprimirPreguntas(index) {
         posicion = 0
         maxPos = preguntas.length
         ocultrarTodo()
-        document.querySelector("#preguntas").style.display = "block"
+        document.querySelector("#prueba").style.display = "flex"
+        document.querySelector("#nota").innerHTML = "";
+        document.querySelector("#siguiente").textContent = "Siguiente"
         preguntas.sort(() => Math.random() > 0.5 ? 1 : -1)
+        crearPruebaInfo()
         imprimirPregunta()
     } catch (error) {
         examenes.splice(index, 1)
         localStorage.setItem("examenes", JSON.stringify(examenes))
         render()
+    }
+}
+
+
+
+//<div class="preguntaInfo"></div>
+function crearPruebaInfo(){
+    document.querySelector("#preguntasDatos").innerHTML = "";
+    for (let index = 0; index < maxPos; index++) {
+        const temElemento = document.createElement("div")
+        temElemento.classList.add("preguntaInfo")
+        temElemento.innerHTML = index + 1
+
+        temElemento.addEventListener("click",()=>{
+            posicion = index;
+            imprimirPregunta()
+        })
+        document.querySelector("#preguntasDatos").appendChild(temElemento)
     }
 }
 
@@ -166,6 +190,25 @@ function cambiarPregunta(num) {
     }
     document.querySelector("#siguiente").textContent = (posicion == maxPos-1) ? "Ver nota" : "Siguiente"
 }
+
+function corregirPregunta(num,borrar,noSeguir){
+    const pregunta = document.querySelectorAll(".preguntaInfo")[num];
+    pregunta.classList.remove("bg-danger","bg-success")
+    if(!borrar){
+        const respuesta = buscarRespuesta(num)?.respuesta
+        if(respuesta) pregunta.classList.add( respuesta ==preguntas[num].respuesta ? "bg-success" : "bg-danger" )
+        if(!noSeguir) pregunta.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+    function corregirPreguntas(borrar){
+        for (let index = 0; index < maxPos; index++) {
+            corregirPregunta(index,borrar,true)
+        }
+    }
+
+
+
 
 
 function imprimirPregunta() {
@@ -188,24 +231,33 @@ function imprimirOpciones(opciones) {
         const check = div.querySelector("input")
         check.addEventListener("click", () => {
             //respuestas[posicion] = {posicion:posicion,respuesta:opcion}
-            if(respuestas[posicion]){
+            const objRespuesta = buscarRespuesta(posicion);
+            const corregir = document.querySelector("#corregir").checked;
+            if(objRespuesta && objRespuesta.respuesta==opcion){
                 check.checked = false;
-                respuestas.splice(posicion,1)
+                respuestas.splice(respuestas.indexOf(objRespuesta),1)
+                corregirPregunta(posicion,true)
             }else{
+                if(objRespuesta) respuestas.splice(respuestas.indexOf(objRespuesta),1)
                 respuestas.push({posicion:posicion,respuesta:opcion})
+                corregirPregunta(posicion,!corregir)
             }
         })
         padre.appendChild(div)
     });
 }
 
+function buscarRespuesta(poss){
+    return respuestas.find(respuesta=>respuesta.posicion==poss)
+}
 
 function darNota(){
     let suma = 0;
     respuestas.forEach(dato=>{
         suma += (dato.respuesta==preguntas[dato.posicion].respuesta) ? 1 : -0.25
     })
-    alert(`${suma} de ${maxPos}`)
+    corregirPreguntas()
+    document.querySelector("#nota").innerHTML = `${suma} de ${maxPos}`
 }
 
 function cargarElecion(opcion){
